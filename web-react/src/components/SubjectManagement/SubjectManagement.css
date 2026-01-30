@@ -1,0 +1,135 @@
+.subject-management-container {
+    padding: 24px;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+.subject-management-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.subject-management-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.subject-management-header h1 {
+    margin: 0;
+    color: #262626;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.subject-management-filters {
+    margin-bottom: 24px;
+    padding: 16px;
+    background: #fafafa;
+    border-radius: 8px;
+}
+
+.ant-table-thead > tr > th {
+    background: #fafafa;
+    font-weight: 600;
+    color: #262626;
+}
+
+.ant-table-tbody > tr:hover > td {
+    background: #f5f5f5;
+}
+
+.subject-details {
+    padding: 16px 0;
+}
+
+.subject-details-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.subject-details-info h2 {
+    margin: 0 0 8px 0;
+    color: #262626;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.subject-details-info p {
+    margin: 0 0 8px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.detail-section {
+    margin-bottom: 24px;
+}
+
+.detail-section h3 {
+    margin: 0 0 12px 0;
+    color: #262626;
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 2px solid #1890ff;
+    padding-bottom: 4px;
+}
+
+.detail-section p {
+    margin: 8px 0;
+    color: #595959;
+    line-height: 1.6;
+}
+
+.detail-section strong {
+    color: #262626;
+    font-weight: 500;
+}
+
+.students-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.student-item {
+    padding: 8px 12px;
+    margin-bottom: 4px;
+    background: #fafafa;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+}
+
+.student-item:hover {
+    background: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .subject-management-container {
+        padding: 16px;
+    }
+    
+    .subject-management-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .subject-management-filters {
+        padding: 12px;
+    }
+    
+    .subject-management-filters .ant-space {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .subject-management-filters .ant-space-item {
+        width: 100%;
+    }
+    
+    .subject-management-filters .ant-input,
+    .subject-management-filters .ant-select {
+        width: 100% !important;
+    }
+}

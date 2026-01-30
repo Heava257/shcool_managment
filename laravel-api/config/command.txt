@@ -1,0 +1,17 @@
+php artisan serv =for run project
+php artisan migrate = for create table to db 
+php artisan migrate:status => for check migrate run already or not 
+php artisan migrate => for run migrate 
+
+php artisan make:migrate add_new_columns_in_another_colums  --table=roles =>mean add new columnd in table roles
+php artisan make:model Role -m =>mean create file role in Model folder
+php artisan make:controller RoleController --Api => for create Role controller 
+
+php artisan make:model Product -mcr =>  create category in model controller and rout
+
+php artisan vendor:publish --provider="Tymon\JWTAuth\Providers\LaravelServiceProvider"
+
+composer require tymon/jwt-auth
+
+php artisan jwt:secret
+php artisan storage:link

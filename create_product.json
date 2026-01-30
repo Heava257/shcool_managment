@@ -1,0 +1,9 @@
+{
+    "name": "Test Product",
+    "category_id": 1,
+    "brand_id": 1,
+    "price": 99.99,
+    "quantity": 10,
+    "description": "Test product description",
+    "status": 1
+}

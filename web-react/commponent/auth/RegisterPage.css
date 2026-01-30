@@ -1,0 +1,562 @@
+/* Academic Register Page - Modern Design */
+.academic-register-container {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(rgba(10, 14, 39, 0.85), rgba(15, 20, 25, 0.9)),
+        url('/cityscape-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Animated background overlay */
+.academic-register-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+    animation: backgroundPulse 15s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes backgroundPulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Hero Section - Left Side */
+.hero-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content {
+    max-width: 600px;
+    color: white;
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    color: #60a5fa;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.hero-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 24px 0;
+    letter-spacing: -0.02em;
+}
+
+.hero-title .highlight {
+    color: #60a5fa;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    right: 0;
+    height: 12px;
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+    z-index: -1;
+    border-radius: 4px;
+}
+
+.hero-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 48px;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.hero-btn-primary {
+    background: #3b82f6 !important;
+    border: none !important;
+    height: 48px !important;
+    padding: 0 32px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+.hero-btn-primary:hover {
+    background: #2563eb !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5) !important;
+}
+
+.hero-btn-secondary {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    height: 48px !important;
+    padding: 0 32px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease !important;
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    transform: translateY(-2px);
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.feature-item .anticon {
+    color: #60a5fa;
+    font-size: 18px;
+}
+
+/* Register Section - Right Side */
+.register-section {
+    width: 550px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 40px 40px 20px;
+    position: relative;
+    z-index: 1;
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+/* Custom scrollbar for register section */
+.register-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.register-section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.register-section::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.register-section::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.academic-register-card {
+    width: 100%;
+    /* Dark translucent glassmorphism */
+    background: rgba(17, 25, 40, 0.75) !important;
+    backdrop-filter: blur(50px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(50px) saturate(200%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 20px !important;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.15),
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    padding: 40px !important;
+    animation: fadeInRight 0.8s ease-out;
+    margin: 20px 0;
+}
+
+
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Form Header */
+.register-form-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.register-icon {
+    font-size: 48px;
+    color: #3b82f6;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.register-form-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 8px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.register-form-header p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styling */
+.academic-register-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+}
+
+/* Make certain fields span full width */
+.academic-register-form .ant-form-item:nth-child(7),
+/* Profile Image */
+.academic-register-form .ant-form-item:nth-child(8),
+/* Submit Button */
+.academic-register-form>div:last-child {
+    /* Footer text container */
+    grid-column: 1 / -1;
+}
+
+.academic-register-form .ant-form-item-label>label {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+/* Unified Box Styling for Standalone Inputs and Wrappers */
+.academic-register-form .ant-input:not(.ant-input-affix-wrapper > input),
+.academic-register-form .ant-input-affix-wrapper {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    padding: 8px 11px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Fix Input inside Wrapper - Reset styles */
+.academic-register-form .ant-input-affix-wrapper>input.ant-input {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    padding: 0 !important;
+    height: auto !important;
+    box-shadow: none !important;
+}
+
+/* Text & Placeholder Colors */
+.academic-register-form .ant-input {
+    color: #ffffff !important;
+    font-size: 15px !important;
+}
+
+.academic-register-form .ant-input::placeholder,
+.academic-register-form .ant-input-password input::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Hover States */
+.academic-register-form .ant-input:not(.ant-input-affix-wrapper > input):hover,
+.academic-register-form .ant-input-affix-wrapper:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Focus States */
+.academic-register-form .ant-input:not(.ant-input-affix-wrapper > input):focus,
+.academic-register-form .ant-input-affix-wrapper-focused,
+.academic-register-form .ant-input-focused {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #60a5fa !important;
+    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2) !important;
+}
+
+/* Icon Colors inside Inputs */
+.academic-register-form .anticon {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Upload Styling */
+.profile-upload .ant-upload-list-item-container {
+    border-radius: 8px !important;
+}
+
+.profile-upload .ant-upload.ant-upload-select {
+    border-radius: 8px !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 2px dashed rgba(255, 255, 255, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.profile-upload .ant-upload.ant-upload-select:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(96, 165, 250, 0.5) !important;
+}
+
+.profile-upload .ant-upload {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Submit Button */
+.register-submit-btn {
+    height: 48px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    background: #3b82f6 !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+    transition: all 0.3s ease !important;
+    margin-top: 8px !important;
+}
+
+.register-submit-btn:hover {
+    background: #2563eb !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4) !important;
+}
+
+.register-submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Social Login Styles */
+.social-login-section {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.social-login-divider .ant-divider-inner-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0 16px;
+}
+
+.social-login-divider.ant-divider-horizontal.ant-divider-with-text {
+    border-top-color: rgba(255, 255, 255, 0.15);
+    margin: 24px 0;
+}
+
+.social-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.social-btn {
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease !important;
+}
+
+.social-btn .anticon {
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    transform: translateY(-1px);
+}
+
+.google-btn .anticon {
+    color: #EA4335;
+}
+
+.github-btn .anticon {
+    color: #ffffff;
+}
+
+/* Footer Text */
+.register-footer-text {
+    text-align: center;
+    margin-top: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.register-footer-text .ant-btn-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+}
+
+.register-footer-text .ant-btn-link:hover {
+    color: #2563eb;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .hero-section {
+        padding: 40px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 992px) {
+    .academic-register-container {
+        flex-direction: column;
+    }
+
+    .hero-section {
+        padding: 40px 20px;
+        min-height: 40vh;
+    }
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+
+    .register-section {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .academic-register-card {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 30px 20px;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .academic-register-card {
+        padding: 24px !important;
+    }
+
+    .register-form-header h2 {
+        font-size: 20px;
+    }
+
+    /* Make form single column on mobile */
+    .academic-register-form {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .academic-register-form .ant-form-item:nth-child(7),
+    .academic-register-form .ant-form-item:nth-child(8),
+    .academic-register-form>div:last-child {
+        grid-column: 1;
+    }
+}
+
+/* Loading State */
+.register-submit-btn.ant-btn-loading {
+    opacity: 0.8;
+}
+
+/* Link Buttons */
+.ant-btn-link {
+    transition: all 0.2s ease;
+}
+
+.ant-btn-link:hover {
+    text-decoration: none;
+}
