@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "vite preview --port $PORT --host"
+    "start": "npx serve -s dist -l $PORT"
   },
   "dependencies": {
     "@ant-design/icons": "^6.1.0",
@@ -19,6 +19,7 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.6",
+    "serve": "^14.2.0",
     "tailwindcss": "^4.1.17",
     "zustand": "^5.0.8"
   },
