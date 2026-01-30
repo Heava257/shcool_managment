@@ -13,10 +13,12 @@ class Cors
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $origin = $request->header('Origin') ?: '*';
+
         // Handle preflight OPTIONS request
         if ($request->getMethod() === "OPTIONS") {
             return response()->json([], 200, [
-                'Access-Control-Allow-Origin' => 'http://localhost:5175',
+                'Access-Control-Allow-Origin' => $origin,
                 'Access-Control-Allow-Methods' => 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
                 'Access-Control-Allow-Headers' => 'Content-Type, Authorization, X-Requested-With, Accept',
                 'Access-Control-Allow-Credentials' => 'true',
@@ -27,7 +29,7 @@ class Cors
         $response = $next($request);
 
         // Add CORS headers to response
-        $response->headers->set('Access-Control-Allow-Origin', 'http://localhost:5175');
+        $response->headers->set('Access-Control-Allow-Origin', $origin);
         $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
         $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept');
         $response->headers->set('Access-Control-Allow-Credentials', 'true');
