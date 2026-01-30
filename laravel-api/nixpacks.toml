@@ -1,0 +1,9 @@
+[phases.setup]
+nixPkgs = ["php82", "php82Extensions.pdo_mysql", "php82Extensions.bcmath", "php82Extensions.zip", "php82Extensions.fileinfo", "php82Extensions.tokenizer", "php82Extensions.mbstring", "php82Extensions.curl", "php82Extensions.xml", "php82Extensions.gd", "composer", "git"]
+aptPkgs = ["libpng-dev", "libzip-dev"]
+
+[phases.build]
+cmds = ["composer install --no-dev --optimize-autoloader"]
+
+[start]
+cmd = "php artisan migrate --force && php artisan storage:link && php artisan serve --host=0.0.0.0 --port=$PORT"
