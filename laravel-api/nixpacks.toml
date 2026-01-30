@@ -10,4 +10,4 @@ mode = "replace"
 cmds = ["echo 'Build Complete'"]
 
 [start]
-cmd = "php artisan migrate --force && php artisan storage:link && php artisan serve --host=0.0.0.0 --port=$PORT"
+cmd = "echo 'DEBUG: DB_HOST='$DB_HOST' DB_PORT='$DB_PORT' DB_DATABASE='$DB_DATABASE'' && php artisan migrate --force && php artisan storage:link && php artisan serve --host=0.0.0.0 --port=$PORT"
