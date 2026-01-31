@@ -107,6 +107,7 @@ const RegisterPage = () => {
             }
         } catch (error) {
             console.error('Registration error:', error);
+            console.log('Full Error Object:', error); // DEBUGGING: See what the actual response is
             message.error(error.message || 'An unexpected error occurred.');
         } finally {
             setLoading(false);
