@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(),],
+  plugins: [react(), tailwindcss()],
   server: {
     proxy: {
       '/api': {
@@ -13,9 +13,5 @@ export default defineConfig({
         changeOrigin: true,
       }
     }
-  },
-  preview: {
-    allowedHosts: ['frontend-production-754c.up.railway.app'],
-  },
-
+  }
 })
